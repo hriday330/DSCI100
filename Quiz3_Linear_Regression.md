@@ -17,7 +17,7 @@ lm_recipe <- recipe(price ~ sqft, data = sacramento_train)
 **Model Specification:** Always the same for linear regression - engine = "lm", mode = "regression"
 
 
-```R
+```R 
 lm_spec <- linear_reg() |>
   set_engine("lm") |>
   set_mode("regression")
