@@ -9,10 +9,6 @@ lm_recipe <- recipe(price ~ sqft, data = sacramento_train)
 ```
 
 
-    Error in recipe(price ~ sqft, data = sacramento_train): could not find function "recipe"
-    Traceback:
-
-
 
 **Model Specification:** Always the same for linear regression - engine = "lm", mode = "regression"
 
@@ -23,10 +19,6 @@ lm_spec <- linear_reg() |>
   set_mode("regression")
 
 ```
-
-
-    Error in set_mode(set_engine(linear_reg(), "lm"), "regression"): could not find function "set_mode"
-    Traceback:
 
 
 
@@ -42,9 +34,6 @@ lm_fit <- workflow() |>
 lm_fit
 ```
 
-
-    Error in fit(add_model(add_recipe(workflow(), lm_recipe), lm_spec), data = sacramento_train): could not find function "fit"
-    Traceback:
 
 
 
@@ -70,11 +59,6 @@ lm_test_results
 ```
 
 
-    Error in metrics(bind_cols(predict(lm_fit, sacramento_test), sacramento_test), : could not find function "metrics"
-    Traceback:
-
-
-
 In particular, to extract the RMSE/RMSPE as a numerical value, we use:
 
 
@@ -85,11 +69,6 @@ lm_rmspe <- lm_test_results %>%
           pull()
         
 ```
-
-
-    Error in lm_test_results %>% filter(.metric == "rmse") %>% select(.estimate) %>% : could not find function "%>%"
-    Traceback:
-
 
 
 **RMSE vs RMSPE**: RMSE is the root-mean-squared error of the model when predicting on the training set, RMSPE is the root-mean-squared _prediction_ error when predicting on the testing set.
@@ -124,10 +103,6 @@ marathon_testing <- testing(marathon_split)
 ```
 
 
-    Error in read_csv("filename.csv"): could not find function "read_csv"
-    Traceback:
-
-
 
 **Training & Fitting the Model**
 
@@ -145,11 +120,6 @@ lm_fit <- workflow() %>%
 
 lm_fit
 ```
-
-
-    Error in recipe(price ~ sqft, data = sacramento_train): could not find function "recipe"
-    Traceback:
-
 
 
 **Testing the model on testing data**
@@ -171,10 +141,6 @@ lm_rmspe
 ```
 
 
-    Error in lm_fit %>% predict(sacramento_test) %>% bind_cols(sacramento_test) %>% : could not find function "%>%"
-    Traceback:
-
-
 
 **Visualising Simple Linear Regression on a graph**
 
@@ -189,23 +155,12 @@ lm_predictions <- ggplot(marathon_training, aes(x = max, y = time_hrs)) +
 ```
 
 
-    Error in ggplot(marathon_training, aes(x = max, y = time_hrs)): could not find function "ggplot"
-    Traceback:
-
-
-
 **Exploring the data/pairs of predictors using ggpairs**
 
 
 ```R
 ggpairs(training_data)
 ```
-
-
-    Error in ggpairs(training_data): could not find function "ggpairs"
-    Traceback:
-
-
 
 
 ```R
